@@ -9,7 +9,7 @@
 
 <body>
 
-    <h1>Activity 1 Number Counter</h1>
+    <h1>Activity #1 Number Counter</h1>
     <?php
     $count = 2;
 
@@ -19,7 +19,7 @@
     }
     ?>
 
-    <h1>Activity 2 Password Validator</h1>
+    <h1>Activity #2 Password Validator</h1>
     <?php
     $correctPassword = "password123";
 
@@ -53,14 +53,14 @@
 
     </html>
 
-    <h1>Activity 3 Multiplication Table</h1>
+    <h1>Activity #3 Multiplication Table</h1>
     <?php
     for ($i = 1; $i <= 10; $i++) {
         echo "7 x $i = " . (7 * $i) . "<br>";
     }
     ?>
 
-    <h1>Activity 4 Loop Control</h1>
+    <h1>Activity #4 Loop Control</h1>
     <?php
     for ($i = 1; $i <= 10; $i++) {
         if ($i == 5) {
@@ -73,7 +73,7 @@
     }
     ?>
 
-    <h1>Activity 5 Sum of Numbers</h1>
+    <h1>Activity #5 Sum of Numbers</h1>
     <?php
     $sum = 0;
     $num = 1;
@@ -85,7 +85,7 @@
     echo "The sum of numbers from 1 to 100 is: " . $sum;
     ?>
 
-    <h1>Activity 6 Array Iteration</h1>
+    <h1>Activity #6 Array Iteration</h1>
     <?php
     $movie = ["The Shawshank Redemption", "Inception", "The Dark Knight", "Interstellar", "Parasyte"];
 
@@ -97,7 +97,7 @@
     $counter++;
     ?>
 
-    <h1>Activity 7 Key-Value Pairs</h1>
+    <h1>Activity #7 Key-Value Pairs</h1>
     <?php
     $studentInfo = [
         "Name" => "Stephen",
@@ -111,7 +111,7 @@
     }
     ?>
 
-    <h1>Activity 8 Factorial Calculator</h1>
+    <h1>Activity #8 Factorial Calculator</h1>
     <?php
     $num = 5;
     $fac = 1;
@@ -122,7 +122,7 @@
     echo "Factorial of $num is: $fac";
     ?>
 
-    <h1>Activity 9 FizzBuzz</h1>
+    <h1>Activity #9 FizzBuzz</h1>
     <?php
     for ($i = 1; $i <= 50; $i++) {
         if ($i % 3 == 0 && $i % 5 == 0) {
@@ -137,7 +137,7 @@
     }
     ?>
 
-    <h1>Activity 10 Prime Number Checker</h1>
+    <h1>Activity #10 Prime Number Checker</h1>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['numer'])) {
         $number = $_POST['number'];
@@ -162,7 +162,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Activity 10 Prime Number Checker</title>
+        <title>Activity #10 Prime Number Checker</title>
     </head>
 
     <body>
@@ -175,7 +175,7 @@
 
     </html>
 
-    <h1>Activity 11 Fibonacci Sequence</h1>
+    <h1>Activity #11 Fibonacci Sequence</h1>
     <?php
     $first = 0;
     $second = 1;
@@ -194,7 +194,7 @@
     }
     ?>
 
-    <h1>Activity 12 Reverse a String</h1>
+    <h1>Activity #12 Reverse a String</h1>
     <?php
     $reversi = readline('input something: ');
 
