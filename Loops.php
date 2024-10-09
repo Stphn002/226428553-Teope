@@ -18,7 +18,41 @@
         $count += 2;
     }
     ?>
- 
+
+    <h1>Activity 2 Password Validator</h1>
+    <?php
+    $correctPassword = "password123";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    }
+    $inputPassword = $_POST['password'];
+
+    if ($inputPassword === $correctPassword) {
+        echo "Access Granted.";
+    } else {
+        echo "Incorrect password.";
+    }
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form method="post" action="">
+            <label>Please enter the password:</label>
+            <input type="password" name="password">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+    </html>
+
     <h1>Activity 3 Multiplication Table</h1>
     <?php
     for ($i = 1; $i <= 10; $i++) {
@@ -44,11 +78,11 @@
     $sum = 0;
     $num = 1;
 
-    while($num <= 100){
+    while ($num <= 100) {
         $num += $num;
-        $num ++;
+        $num++;
     }
-    echo "The sum of numbers from 1 to 100 is: " .$sum;
+    echo "The sum of numbers from 1 to 100 is: " . $sum;
     ?>
 
     <h1>Activity 6 Array Iteration</h1>
@@ -57,7 +91,7 @@
 
     $counter = 1;
 
-    foreach($movie as $key => $value){
+    foreach ($movie as $key => $value) {
         echo "$key = $value<br>";
     }
     $counter++;
@@ -72,7 +106,7 @@
         "City" => "Baguio"
     ];
 
-    foreach ($studentInfo as $key => $value){
+    foreach ($studentInfo as $key => $value) {
         echo "$key: $value<br>";
     }
     ?>
@@ -82,41 +116,38 @@
     $num = 5;
     $fac = 1;
 
-    for ($i = $num; $i >= 1; $i--){
-        $fac*=$i;
+    for ($i = $num; $i >= 1; $i--) {
+        $fac *= $i;
     }
     echo "Factorial of $num is: $fac";
     ?>
 
     <h1>Activity 9 FizzBuzz</h1>
     <?php
-    for ($i = 1; $i <= 50; $i++){
-        if ($i % 3 == 0 && $i % 5 == 0){
+    for ($i = 1; $i <= 50; $i++) {
+        if ($i % 3 == 0 && $i % 5 == 0) {
             echo "FizzBuzz<br>";
-        }
-        elseif ($i % 3 == 0){
+        } elseif ($i % 3 == 0) {
             echo "Fizz<br>";
-        }
-        elseif ($i % 5 == 0){
+        } elseif ($i % 5 == 0) {
             echo "Buzz<br>";
-        }
-        else{
-            echo $i ."<br> ";
+        } else {
+            echo $i . "<br> ";
         }
     }
     ?>
 
     <h1>Activity 10 Prime Number Checker</h1>
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['numer'])){
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['numer'])) {
         $number = $_POST['number'];
         $is_prime = true;
 
-        if($number <2){
+        if ($number < 2) {
             $is_prime = false;
         } else {
-            for ($i = 2; $i <= sqrt($number); $i++){
-                if ($number % $i == 0){
+            for ($i = 2; $i <= sqrt($number); $i++) {
+                if ($number % $i == 0) {
                     $is_prime = false;
                     break;
                 }
@@ -127,18 +158,21 @@
 
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Activity 10 Prime Number Checker</title>
     </head>
+
     <body>
         <form method="post" action="">
-        <label>Enter a number: </label>
-        <input type="number" name="number">
-        <input type="submit" value="Check">
+            <label>Enter a number: </label>
+            <input type="number" name="number">
+            <input type="submit" value="Check">
         </form>
     </body>
+
     </html>
 
     <h1>Activity 11 Fibonacci Sequence</h1>
@@ -148,9 +182,9 @@
     $count = 0;
     $limit = 10;
 
-    while ($count < $limit){
-        echo $first . " " ;
-        
+    while ($count < $limit) {
+        echo $first . " ";
+
         $next = $first + $second;
 
         $first = $second;
@@ -164,7 +198,8 @@
     <?php
     $reversi = readline('input something: ');
 
-    echo "output:" .strrev ($reversi);
+    echo "output:" . strrev($reversi);
     ?>
+
 </body>
 </html>
