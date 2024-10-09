@@ -24,13 +24,14 @@
     $correctPassword = "password123";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    }
+    
     $inputPassword = $_POST['password'];
 
     if ($inputPassword === $correctPassword) {
         echo "Access Granted.";
     } else {
         echo "Incorrect password.";
+    }
     }
     ?>
 
