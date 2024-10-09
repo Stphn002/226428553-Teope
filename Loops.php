@@ -1,165 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loops Activity</title>
 </head>
+
 <body>
-    <?php //1
-        $number = 1;
-            while ($number <=10){
-                echo $number . " ";
-                $number++;
-            }
-    ?>
+
+    <h1>Activity 1 Number Counter</h1>
     <?php
-        $number = 2;
-            while ($number <=20){
-                echo $number . " ";
-                $number += 2;
-            }
+    $count = 2;
+
+    while ($count <= 20) {
+        echo $count . " ";
+        $count += 2;
+    }
+    ?>
+ 
+    <h1>Activity 3 Multiplication Table</h1>
+    <?php
+    for ($i = 1; $i <= 10; $i++) {
+        echo "7 x $i = " . (7 * $i) . "<br>";
+    }
     ?>
 
-    <?php //2
-        $correctPassword = "passwordCIT17";
-        $userInput = " ";
-
-        do{
-            echo "Please enter the password: ";
-            $userInput = trim(fgets(STDIN));
-
-            if($userInput !== $correctPassword){
-                echo "Incorrect Password. \n";
-            }
-        }while ($userInput !== $correctPassword);
-        echo "Correct Password\n"
-    ?>
-
-    <?php //3
-        $table = 7;
-        $length = 10;
-        $i = 1;
-        echo "Multiplication Table: $table \n";
-        for($i=1; $i<=length; $i++)
-            echo "$i * $table = ".$i * $table. "\n";
-    ?>
-
-    <?php //4
-        for ($i = 1; $i <=10; $i++) {
-            if ($i == 5){
-                continue
-            }
-        if ($i == 9){
+    <h1>Activity 4 Loop Control</h1>
+    <?php
+    for ($i = 1; $i <= 10; $i++) {
+        if ($i == 5) {
+            continue;
+        }
+        if ($i == 9) {
             break;
         }
-        echo $i . "<br>";
-        }
+        echo $i . " ";
+    }
     ?>
 
-    <?php //5
-        $sum = 0;
-        $i = 1;
+    <h1>Activity 5 Sum of Numbers</h1>
+    <?php
+    $sum = 0;
+    $num = 1;
 
-        while($i <=100){
-            $sum += $i;
-            $i ++;
-        }
-        echo "The sum of numbers from 1 to 100 is: $sum";
+    while($num <= 100){
+        $num += $num;
+        $num ++;
+    }
+    echo "The sum of numbers from 1 to 100 is: " .$sum;
     ?>
 
-    <?php //6
-        $favoriteMovies = ["1. The Intern", "2. Despicable Me", "3. One Piece: RED", "4. Your Name", "5. The End of Evangelion"];
-        foreach ($favoriteMovies as $movie){
-            echo "$movie<br>";
-        }
+    <h1>Activity 6 Array Iteration</h1>
+    <?php
+    $movie = ["The Shawshank Redemption", "Inception", "The Dark Knight", "Interstellar", "Parasyte"];
+
+    $counter = 1;
+
+    foreach($movie as $key => $value){
+        echo "$key = $value<br>";
+    }
+    $counter++;
     ?>
 
-    <?php //7
-        $studentInfo = [
-            "Name" => "Stephen",
-            "Age" => 22,
-            "Grade" => "SSS",
-            "City" => "Baguio"
-        ];
+    <h1>Activity 7 Key-Value Pairs</h1>
+    <?php
+    $studentInfo = [
+        "Name" => "Stephen",
+        "Age" => "22",
+        "Grade" => "S",
+        "City" => "Baguio"
+    ];
 
-        foreach ($studentInfo as $key => $value){
-            echo "$key: $value<br>";
-        }
+    foreach ($studentInfo as $key => $value){
+        echo "$key: $value<br>";
+    }
     ?>
 
-    <?php //8
-        $number = 5;
-        $factorial = 1;
+    <h1>Activity 8 Factorial Calculator</h1>
+    <?php
+    $num = 5;
+    $fac = 1;
 
-        for ($i = $number; $i > 0; $i--){
-            $factorial*=$i;
-        }
-        echo "Factorial of $number is $factorial";
+    for ($i = $num; $i >= 1; $i--){
+        $fac*=$i;
+    }
+    echo "Factorial of $num is: $fac";
     ?>
 
-    <?php //9
-        for ($i = 1; $i <= 50; $i++){
-            if ($i % 3 == 0 && $i % 5 == 0){
-                echo "FizzBuzz<br>";
-            }
-            elseif ($i % 3 == 0){
-                echo "Fizz<br>";
-            }
-            elseif ($i % 5 == 0){
-                echo "Buzz<br>";
-            }
-            else{
-                echo $i . "<br>";
-            }
+    <h1>Activity 9 FizzBuzz</h1>
+    <?php
+    for ($i = 1; $i <= 50; $i++){
+        if ($i % 3 == 0 && $i % 5 == 0){
+            echo "FizzBuzz<br>";
         }
+        elseif ($i % 3 == 0){
+            echo "Fizz<br>";
+        }
+        elseif ($i % 5 == 0){
+            echo "Buzz<br>";
+        }
+        else{
+            echo $i ."<br> ";
+        }
+    }
     ?>
 
-    <?php //10
-        $number  = isset($_GET['number']) ? intval($_GET['number']) : 17;
-        function isPrime($num){
-            if ($num <= 1){
-                return false;
-            }
-            for ($i = 2; $i <= sqrt($num); $i++){
-                if ($num % $i == 0) {
-                    return false;
+    <h1>Activity 10 Prime Number Checker</h1>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['numer'])){
+        $number = $_POST['number'];
+        $is_prime = true;
+
+        if($number <2){
+            $is_prime = false;
+        } else {
+            for ($i = 2; $i <= sqrt($number); $i++){
+                if ($number % $i == 0){
+                    $is_prime = false;
+                    break;
                 }
             }
-            return true;
         }
-        if (isPrime($number)){
-            echo $number . " is a prime number.";
-        } else {
-            echo $number . " is not a prime number.";
-        }
+    }
     ?>
 
-    <?php //11
-        $num1 = 0;
-        $num2 = 1;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Activity 10 Prime Number Checker</title>
+    </head>
+    <body>
+        <form method="post" action="">
+        <label>Enter a number: </label>
+        <input type="number" name="number">
+        <input type="submit" value="Check">
+        </form>
+    </body>
+    </html>
 
-        $counter = 0;
+    <h1>Activity 11 Fibonacci Sequence</h1>
+    <?php
+    $first = 0;
+    $second = 1;
+    $count = 0;
+    $limit = 10;
 
-        $limit = 10;
+    while ($count < $limit){
+        echo $first . " " ;
+        
+        $next = $first + $second;
 
-        while ($counter < $limit) {
-            echo $num1 . "<br>";
+        $first = $second;
+        $second = $next;
 
-            $nextNum = $num1 + $num2;
-
-            $num1 = $num2;
-            $num2 = $nextNum;
-            
-            $counter++;
-        }
+        $count++;
+    }
     ?>
 
-    <?php //12
-    $reversi = readline("Input: ");
-    echo "output: " .strrev ($reversi);
-    ?>   
+    <h1>Activity 12 Reverse a String</h1>
+    <?php
+    $reversi = readline('input something: ');
 
-
+    echo "output:" .strrev ($reversi);
+    ?>
 </body>
 </html>
